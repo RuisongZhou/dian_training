@@ -17,7 +17,7 @@
    2. git diff --cached(staged)查看没有暂存起来的差异
    3. git commit -a 可以跳过已跟踪文件
    4. git rm --cached <file>移除跟踪但不删除文件
- 5. git mv file_from          file_to文件更改
+ 5. git mv file_from          file_to文件名更改
    6. git log回顾提交历史
    git log -p -2 // -p展开显示每次提交的差异 -2仅显示最近两次更新
    还有-stat仅显示简要的增改行数统计，--pretty=format见progit第24页
@@ -63,6 +63,7 @@
  | u所有者 |g所属组| o其他人|
  
   其中 r读 w写 x执行
+  
   ---
   
   
