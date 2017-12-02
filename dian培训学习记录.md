@@ -148,5 +148,44 @@ shutdown 关机命令（-r重启 -c取消 必须加时间）
 作用：-v  显示文件名
 -c number   显示前number个字符,若number为负数,则显示除最后number个字符的所有内容
 -number/n (+)number     显示前number行内容，
--n number   若number为负数，则显示除最后number行数据的所有内容显示档案开头，默认开头10行
+-n number   若number为负数，则显示除最后number行数据的所有内容显示档案开头，默认开头10行 
+
+  ---
+  
+### 12.1 学习记录
+
+>* 学习git
+1. 查看远程仓库
+git push [remote-name] [branch-name] 推送数据
+git remote show [remote-name] 查看仓库详细信息 
+git remote rename [原名字] [新名字] 更改远程仓库名
+git remote rm [repository] 移除仓库
+2. 打标签
+git tag 查看标签
+git tag -1 'name' 查看标签
+git tag -a 版本 -m 'new tag'新建标签
+git show [版本] 查看版本信息
+3. 分支
+git branch 查看分支
+git branch [new branch] 建立新分支newbranch
+git checkout [branch] 转换分支
+git branch -b [newbranch] 创建并切换到该分支
+git branch -d [branch] 删除分支
+git merge [branch] 合并分支（提前切换到master分支）
+git branch -v 查看各分支最后一次commit信息
+>* vim
+dw删除一个单词
+d$删除一句话
+hjkl移动光标
+q!强制退出
+wq保存退出
+i插入操作
+A添加操作
+2w 使光标前移两个单词
+3e使光标前移到第三个单词末尾
+d2w 删除两个字母
+dd删除整行
+u撤销修改
+U恢复该行原有状态
+CTRL+R 重做被撤销的指令
 
