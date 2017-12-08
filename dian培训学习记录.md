@@ -1,4 +1,4 @@
-﻿# dian培训学习记录
+# dian培训学习记录
 
 标签（空格分隔）： 笔记
 
@@ -349,3 +349,30 @@ T   显示当前终端的所有程序
 >* Linux
 1. 搭建了ssr
 2. 设置了github
+3. ifconfig [网络设备] [参数]
+作用：查看和配置网络设备
+4. route 显示和操作IP路由表
+5. ping [参数] [主机名或IP地址] 
+作用：测试与目标主机的连通性
+ -q 只显示最后结果
+6.  netstat
+作用：显示与IP、TCP、UDP和ICMP协议相关的统计数据
+7. rcp [参数] [源文件] [目标文件] 
+作用：远程拷贝文件
+-r  递归复制
+-p  保留源文件的属性
+usage: rcp –r remote_hostname:remote_dir local_dir
+8. .wget [参数] [URL地址]
+作用：直接从网络上下载文件
+-o FILE 把记录写到FILE文件中
+eg : wget -O a.txt URL
+wget --limit-rate=300k URL  限速下载
+9. paste 合并文件，需确保合并的两文件行数相同
+-d  指定不同于空格或tab键的域分隔符
+-s  按行合并，单独一个文件为一行
+10. su [参数] user 切换登入
+-l  切换时连同环境变量、工作目录一起改变
+-c command  执行command变回原来的使用者
+11. sudo 以特定用户的权限执行特定命令
+-l  列出当前用户可执行的命令
+-u username#uid 以指定用户执行命令
