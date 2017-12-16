@@ -14,7 +14,8 @@ name='Bill "HelloWorld" Gates'
 * 如果您希望在不产生一个新段落的情况下进行换行（新行），请使用 <br /> 标签：
 <p>This is<br />a para<br />graph with line breaks</p>
 * text-align 属性规定了元素中文本的水平对齐方式
-* font-family、color 以及 font-size 属性分别定义元素中文本的字体系列、颜色和字体尺寸```
+* font-family、color 以及 font-size 属性分别定义元素中文本的字体系列、颜色和字体尺寸
+```
 * 文本格式化标签
 |标签	|描述|
 | --------   | :----:  |
