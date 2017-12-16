@@ -1,7 +1,7 @@
-* HTML 标题（Heading）是通过 <h1> - <h6> 等标签进行定义的。
+``` JavaScript * HTML 标题（Heading）是通过 <h1> - <h6> 等标签进行定义的。
 * HTML 段落是通过 <p> 标签进行定义的。
-* HTML 链接是通过 <a> 标签进行定义的。
-<a href="http://www.w3school.com.cn">This is a link</a>
+* HTML 链接是通过 <a> 标签进行定义的
+ <a href="http://www.w3school.com.cn">This is a link</a>
 * HTML 图像是通过 <img> 标签进行定义的。
 * 属性值应该始终被包括在引号内。双引号是最常用的，不过使用单引号也没有问题。
 在某些个别的情况下，比如属性值本身就含有双引号，那么您必须使用单引号，例如：
@@ -34,4 +34,5 @@ name='Bill "HelloWorld" Gates'
 |<tt>	|定义打字机代码。|
 |<var>|	定义变量。|
 |<pre>|	定义预格式文本。|
-	
+
+* HTML <q> 元素定义短的引用。浏览器通常会为 <q> 元素包围引号。
