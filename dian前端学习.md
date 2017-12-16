@@ -44,7 +44,7 @@ name='Bill "HelloWorld" Gates'
 |```<pre>```|	定义预格式文本。|
 
 * HTML ```<q>``` 元素定义短的引用。浏览器通常会为 ```<q>``` 元素包围引号。
-	<p>WWF 的目标是：<q>构建人与自然和谐共存的世界。</q></p>
+```JavaScript	<p>WWF 的目标是：<q>构建人与自然和谐共存的世界。</q></p>
 * HTML <blockquote> 元素定义被引用的节。
 浏览器通常会对 <blockquote> 元素进行缩进处理
 	<p>以下内容引用自 WWF 的网站：</p>
@@ -80,4 +80,50 @@ USA
 * HTML <var> 元素定义数学变量
 	<p>Einstein wrote:</p>
     <p><var>E = m c<sup>2</sup></var></p>
- *条件注释
+ * 条件注释
+ <!--[if IE 8]>
+    .... some HTML here ....
+<![endif]-->
+条件注释定义只有 Internet Explorer 执行的 HTML 标签。
+* 样式
+	1. 外部样式表
+		当样式需要被应用到很多页面的时候，外部样式表将是理想的选择。使用外部样式表，你就可以通过更改一个文件来改变整个站点的外观。
+			<head>
+			<link rel="stylesheet" type="text/css" href="mystyle.css">
+			</head>
+	2.内部样式表
+		当单个文件需要特别样式时，就可以使用内部样式表。你可以在 head 部分通过 <style> 标签定义内部样式表。
+			<head>
+			<style type="text/css">
+			body {background-color: red}
+			p {margin-left: 20px}
+			</style>
+			</head>
+	3. 内联样式
+		当特殊的样式需要应用到个别元素时，就可以使用内联样式。 使用内联样式的方法是在相关的标签中使用样式属性。样式属性可以包含任何 CSS 属性。以下实例显示出如何改变段落的颜色和左外边距。
+			<p style="color: red; margin-left: 20px">
+			This is a paragraph
+			</p>
+* HTML链接语法<a href="url">Link text</a>
+  新窗口打开<a href="http://www.w3school.com.cn/" target="_blank">Visit W3School!</a>
+* name属性<a name="label">锚（显示在页面上的文本）</a>
+首先，我们在 HTML 文档中对锚进行命名（创建一个书签）：
+<a name="tips">基本的注意事项 - 有用的提示</a>
+然后，我们在同一个文档中创建指向该锚的链接：
+<a href="#tips">有用的提示</a>
+您也可以在其他页面中创建指向该锚的链接：
+<a href="http://www.w3school.com.cn/html/html_links.asp#tips">有用的提示</a>
+在上面的代码中，我们将 # 符号和锚名称添加到 URL 的末端，就可以直接链接到 tips 这个命名锚了。
+* 跳出框架 <a href="/index.html" target="_top">请点击这里！</a> 
+* 图像标签（<img>）和源属性（Src）
+	定义图像的语法是：
+	<img src="url" />
+* 替换文本属性（Alt）
+alt 属性用来为图像定义一串预备的可替换的文本。替换文本属性的值是用户定义的。
+<img src="boat.gif" alt="Big Boat">
+* 背景图片 <body background="/i/eg_background.jpg"></body>
+* <img src ="/i/eg_cute.gif" align ="left"> 
+带有图像的一个段落。图像的 align 属性设置为 "left"。图像将浮动到文本的左侧。
+* <map>	定义图像地图。
+<area>	定义图像地图中的可点击区域。
+```
