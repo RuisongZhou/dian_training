@@ -1,4 +1,3 @@
-``` javascript 
 * HTML 标题（Heading）是通过 <h1> - <h6> 等标签进行定义的。
 * HTML 段落是通过 <p> 标签进行定义的。
 * HTML 链接是通过 <a> 标签进行定义的
@@ -14,9 +13,9 @@ name='Bill "HelloWorld" Gates'
 * HTML 折行
 * 如果您希望在不产生一个新段落的情况下进行换行（新行），请使用 <br /> 标签：
 <p>This is<br />a para<br />graph with line breaks</p>
-```
+
 * text-align 属性规定了元素中文本的水平对齐方式
-* font-family、color 以及 font-size 属性分别定义元素中文本的字体系列、颜色和字体尺寸
+* font-family、color 以及 font-size 属性分别定义元素中文本的字体系、列颜色和字体尺寸
 * 文本格式化标签
 
 |标签		|描述		|
@@ -44,7 +43,7 @@ name='Bill "HelloWorld" Gates'
 |```<pre>```|	定义预格式文本。|
 
 * HTML ```<q>``` 元素定义短的引用。浏览器通常会为 ```<q>``` 元素包围引号。
-```JavaScript	<p>WWF 的目标是：<q>构建人与自然和谐共存的世界。</q></p>
+	<p>WWF 的目标是：<q>构建人与自然和谐共存的世界。</q></p>
 * HTML <blockquote> 元素定义被引用的节。
 浏览器通常会对 <blockquote> 元素进行缩进处理
 	<p>以下内容引用自 WWF 的网站：</p>
@@ -126,4 +125,3 @@ alt 属性用来为图像定义一串预备的可替换的文本。替换文本�
 带有图像的一个段落。图像的 align 属性设置为 "left"。图像将浮动到文本的左侧。
 * <map>	定义图像地图。
 <area>	定义图像地图中的可点击区域。
-```
