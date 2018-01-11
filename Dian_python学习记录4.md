@@ -49,12 +49,12 @@ mylist is ['carrot', 'banana']
 
 ```py
 # 这是一个字符串对象
-name = 'Swaroop'
-if name.startswith('Swa'): # 注意是startswith
+`name` = 'Swaroop'
+if `name`.startswith('Swa'): # 注意是startswith
 print('Yes, the string starts with "Swa"')
-if 'a' in name:
+if 'a' in `name`:
 print('Yes, it contains the string "a"')
-if name.find('war') != -1:
+if `name`.find('war') != -1:
 print('Yes, it contains the string "war"')
 delimiter = '_*_'
 mylist = ['Brazil', 'Russia', 'India', 'China']
@@ -77,7 +77,7 @@ Brazil_*_Russia_*_India_*_China
 * 从属于对象或类的变量叫做字段(Field)。
 * 对象还可以使用属于类的函数来实现某些功能，这种函数叫作类的方法(Method)。
 * 字段与方法通称类的属性(Attribute)。
-* 通过class可以创建一个类。类方法与普通函数只有一种特定的区别——前者必须有一个额外的名字，这个名字必须添加到参数列表的开头，但是你不用在你调用这个功能时为这个参数赋值，Python 会为它提供。这种特定的变量引用的是对象本身，按照惯例，它被赋予`self`这一名称。
+* 通过class可以创建一个类。类方法与普通函数只有一种特定的区别——前者必须有一个额外的名字，这个名字必须添加到参数列表的开头，但是你不用在你调用这个功能时为这个参数赋值，Python 会为它提供。这种特定的变量引用的是对象本身，按照惯例，它被赋予``self``这一名称。
 
 ### 类
 
@@ -94,11 +94,11 @@ $ python oop_simplestclass.py
 ```
 
 类与对象一如函数那般都可以带有方法（Method），唯一的不同在于
-我们还拥有一个额外的  self  变量。
+我们还拥有一个额外的  `self`  变量。
 
 ```py
 class Person:
-    def say_hi(self):
+    def say_hi(`self`):
         print('Hello, how are you?')
 
 p = Person()
@@ -120,11 +120,11 @@ Hello, how are you?
 
 ```py
 class Person:
-    def __init__(self, name):
-        self.name = name
+    def __init__(`self`, `name`):
+        `self`.`name` = `name`
 
-def say_hi(self):
-    print('Hello, my name is', self.name)
+def say_hi(`self`):
+    print('Hello, my `name` is', `self`.`name`)
 p = Person('Swaroop')
 p.say_hi()
 # 前面两行同时也能写作
@@ -132,7 +132,7 @@ p.say_hi()
 
 输出：
 $ python oop_init.py
-Hello, my name is Swaroop
+Hello, my `name` is Swaroop
 ```
 
 ### 类对象与对象变量
@@ -220,4 +220,22 @@ There are still 1 robots working.
 C-3PO is being destroyed!
 C-3PO was the last one.
 We have 0 robots.
+```
+
+在本例中，`population`属于 `Robot`类，因此它是一个类变量。`name`变量属于一个对象（通过使用 `self`分配），因此它是一个对象变量。
+
+因此，我们通过  Robot.population  而非  `self`.population  引用`population` 类变量。我们对于  `name`  对象变量采用  `self`.`name`  标记法加以称呼，这是这个对象中所具有的方法。记住这个类变量与对象变量之间的简单区别。同时你还要注意当一个对象变量与一个类变量名称相同时，类变量将会被隐藏。
+
+除了  Robot.popluation  ，我们还可以使用  `self.__class__.population`  ，因为每个对象都通过`self.__class__`属性来引用它的类。
+
+`how_many` 实际上是一个属于类而非属于对象的方法。这就意味着我们可以将它定义为一个
+`classmethod（类方法）`或是一个`staticmethod(静态方法)`，这取决于我们是否知道我们需不需
+要知道我们属于哪个类。由于我们已经引用了一个类变量，因此我们使用`classmethod（类方法）`。
+
+我们使用装饰器（Decorator）将`how_many`方法标记为类方法。
+
+启动`@classmethod`装饰器等于调用：
+
+```py
+how_many = classmethod(how_many)
 ```
