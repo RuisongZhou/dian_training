@@ -45,7 +45,6 @@ mylist is ['carrot', 'banana']
 你在程序中使用的所有字符串都是`str`类下的对象。下面的案例将演示这种类之下一些有用
 的方法。要想获得这些方法的完成清单，你可以查阅`help(str)`。
 
-
 案例（保存为  ds_str_methods.py  ）：
 
 ```py
@@ -136,7 +135,7 @@ $ python oop_init.py
 Hello, my name is Swaroop
 ```
 
-###  类对象与对象变量
+### 类对象与对象变量
 
 字段（Filed）有两种类型——类变量与对象变量，它们根据究竟是类还是对象拥有这些变量
 来进行分类。
@@ -204,7 +203,7 @@ Robot.how_many()
 
 输出：
 
-```
+```blank
 $ python oop_objvar.py
 (Initializing R2-D2)
 Greetings, my masters call me R2-D2.
