@@ -239,3 +239,123 @@ We have 0 robots.
 ```py
 how_many = classmethod(how_many)
 ```
+
+## 函数式编程
+
+### 返回函数
+
+例，返回求和函数：
+
+```py
+def lazy_sum(*args):
+    def sum():
+        ax = 0
+        for n in args:
+            ax = ax + n
+        return ax
+    return sum
+```
+
+当我们调用`lazy_sum()`时，返回的并不是求和结果，而是求和函数：
+
+```py
+>>> f = lazy_sum(1, 3, 5, 7, 9)
+>>> f
+<function lazy_sum.<locals>.sum at 0x101c6ed90>
+```
+
+调用函数f时，才真正计算求和的结果：
+
+```py
+>>> f()
+25
+```
+
+* 闭包
+
+注意到返回的函数在其定义内部引用了局部变量`args`，所以，当一个函数返回了一个函数后，其内部的局部变量还被新函数引用，所以，闭包用起来简单，实现起来可不容易。
+
+另一个需要注意的问题是，返回的函数并没有立刻执行，而是直到调用了f()才执行。我们来看一个例子：
+
+```py
+def count():
+    fs = []
+    for i in range(1, 4):
+        def f():
+             return i*i
+        fs.append(f)
+    return fs
+
+f1, f2, f3 = count()
+
+#在上面的例子中，每次循环，都创建了一个新的函数，然后，把创建的3个函数都返回了。
+
+#你可能认为调用f1()，f2()和f3()结果应该是1，4，9，但实际结果是：
+
+>>> f1()
+9
+>>> f2()
+9
+>>> f3()
+9
+```
+
+如果一定要引用循环变量怎么办？方法是再创建一个函数，用该函数的参数绑定循环变量当前的值，无论该循环变量后续如何更改，已绑定到函数参数的值不变：
+
+```py
+def count():
+    def f(j):
+        def g():
+            return j*j
+        return g
+    fs = []
+    for i in range(1, 4):
+        fs.append(f(i)) # f(i)立刻被执行，因此i的当前值被传入f()
+    return fs
+
+
+>>> f1, f2, f3 = count()
+>>> f1()
+1
+>>> f2()
+4
+>>> f3()
+9
+```
+
+### 匿名函数
+
+关键字`lambda`表示匿名函数，冒号前面的x表示函数参数。
+
+例：
+
+```py
+>>> list(map(lambda x: x * x, [1, 2, 3, 4, 5, 6, 7, 8, 9]))
+[1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+通过对比可以看出，匿名函数lambda x: x * x实际上就是：
+
+def f(x):
+    return x * x
+```
+
+匿名函数也是一个函数对象，也可以把匿名函数赋值给一个变量，再利用变量来调用该函数：
+
+```py
+>>> f = lambda x: x * x
+>>> f
+<function <lambda> at 0x101c6ef28>
+>>> f(5)
+25
+```
+
+同样，也可以把匿名函数作为返回值返回，比如：
+
+```py
+def build(x, y):
+    return lambda: x * x + y * y
+```
+
+### 装饰器
+
+### 偏函数
